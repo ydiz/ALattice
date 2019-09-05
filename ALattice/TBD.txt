@@ -1,0 +1,39 @@
+cout << Field   is slow; don't know why
+
+------
+
+change names: tidy up function orders in cartesian.h
+
+--------------------
+
+try to make Cartesian global, and all lattice objects depends on a single grid.
+
+Vector : need to define *, / , *=, /= in overload.h
+
+?? _ndims in communicator not directly in grid
+
+
+
+remove vol in Field. or initialized vol with data[0].grid.volLocal
+
+??? if I can make grid global
+
+
+write xlattice_init();
+
+
+change io.h to io.c, compile and link
+
+in readField(): new -> smart pointer
+
+add grid to Field constructor. remove constructor for a number, change it to operator=
+
+
+
+For field: define interface to Grid
+
+
+ move constructor for matrix
+
+
+TBD: change all a._data[i] -> a[i], and see performance.
