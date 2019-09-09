@@ -6,9 +6,11 @@ AC_INIT([ALattice], [0.4])
 AC_CONFIG_SRCDIR([ALattice/alattice.h])
 
 AM_INIT_AUTOMAKE([foreign]) # must add this line to use automake. why?
+
 # =============================
 
 AC_PROG_CXX
+AC_PROG_RANLIB # a must for building libraries
 
 # /home/ydzhao/cuth/install/openmpi-3.1.0
 AC_ARG_ENABLE([mpi],
@@ -48,7 +50,8 @@ fi
 # =============================
 
 
-AM_CXXFLAGS="-I$PWD $AM_CXXFLAGS"
+AM_CXXFLAGS="-I${srcdir} $AM_CXXFLAGS"
+AM_LDFLAGS="-L$PWD/ALattice $AM_LDFLAGS"
 
 # echo "AM_:CXXFLAGS $AM_CXXFLAGS"
 # echo "AM_LDFLAGS $AM_LDFLAGS"
@@ -61,7 +64,7 @@ AC_SUBST([AM_LDFLAGS])
 # =============================
 # Write the output   
 
-AC_CONFIG_FILES([Makefile tests/Makefile])
+AC_CONFIG_FILES([Makefile ALattice/Makefile tests/Makefile])
 AC_CONFIG_HEADERS([include/Config.h])
 AC_OUTPUT
 

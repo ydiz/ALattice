@@ -1,10 +1,5 @@
-#ifndef XLATTICE_THREADS_H
-#define XLATTICE_THREADS_H
+#pragma once
 
- // #include <omp.h>
- #define PARALLEL_FOR_LOOP        _Pragma("omp parallel for schedule(static)")
-  #define parallel_for       PARALLEL_FOR_LOOP for
+#include <omp.h>
+#define parallel_for      _Pragma("omp parallel for for ") // _Pragma("argument") is equivalent to #pragma argument
 
-parallel_for
-
-#endif

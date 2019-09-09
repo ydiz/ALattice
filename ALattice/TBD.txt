@@ -1,12 +1,3 @@
-cout << Field   is slow; don't know why
-
-------
-
-change names: tidy up function orders in cartesian.h
-
---------------------
-
-try to make Cartesian global, and all lattice objects depends on a single grid.
 
 Vector : need to define *, / , *=, /= in overload.h
 

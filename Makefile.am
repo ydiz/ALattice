@@ -1,2 +1,2 @@
-SUBDIRS = tests
+SUBDIRS = ALattice tests 
 

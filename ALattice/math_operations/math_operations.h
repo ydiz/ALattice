@@ -100,7 +100,7 @@ inline Field<T, N> Ta(const Field<T, N> &U)
 template<typename T>
 inline T sum(const Lattice<T>& lat)
 {
-  T ret;
+  T ret = 0;
   for(int i=0; i<lat.grid.volLocal; ++i) ret += lat._data[i];
   ret = lat.grid.sumMPI(ret); // sum over processes
   return ret;
@@ -109,7 +109,7 @@ inline T sum(const Lattice<T>& lat)
 template<typename T, int N>
 inline T sum(const Field<T, N>& U)
 {
-  T ret;
+  T ret = 0;
   for(int mu=0; mu<N; ++mu) ret += sum(U._data[mu]);
   return ret;
 }
@@ -166,12 +166,6 @@ inline Matrix<T,N> Exponentiate(const Matrix<T,N> &arg, double alpha, int Nexp =
   return temp;
 }
 
-GaugeField Exponentiate(const GaugeField &U, double alpha, int Nexp = 10) {
-  GaugeField rst;
-  for(int mu=0; mu<4; ++mu)
-    for(int i=0; i<U.grid.volLocal; ++i) 
-      rst[mu]._data[i] = Exponentiate(U[mu]._data[i], alpha, Nexp);
+GaugeField Exponentiate(const GaugeField &U, double alpha, int Nexp = 10);
 
-  return rst;
-}
 

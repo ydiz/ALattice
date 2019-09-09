@@ -1,5 +1,4 @@
-#ifndef XLATTICE_UTIL_H
-#define XLATTICE_UTIL_H
+#pragma once
 
 inline std::vector<int> indexToCoor(int index, const std::vector<int> &coor)
 {
@@ -23,5 +22,3 @@ inline int coorToIndex(const std::vector<int> &coor_value, const std::vector<int
   return index;
 }
 
-
-#endif

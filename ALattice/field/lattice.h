@@ -1,7 +1,5 @@
-#ifndef XLATTICE_LATTICE_H
-#define XLATTICE_LATTICE_H
+#pragma once
 
-//FIXME: remove index2coor coor2index; defined in geometry
 template<typename T>
 class Lattice{
 public:
@@ -113,12 +111,9 @@ void Lattice<T>::insertSlice(const std::vector<T> &slice, int dim, int coor_valu
     }
 }
 
-using LatticeReal = Lattice<double>;
-using LatticeComplex = Lattice<Complex>;
-using LatticeMatrix = Lattice<Matrix<Complex, 3>>;
 
 
-  template<typename T>
+template<typename T>
 T peekSite(const Lattice<T> &lat, const std::vector<int> &gcoor)
 {
   T ret;
@@ -130,5 +125,7 @@ T peekSite(const Lattice<T> &lat, const std::vector<int> &gcoor)
   return ret;
 }
 
+using LatticeReal = Lattice<double>;
+using LatticeComplex = Lattice<Complex>;
+using LatticeMatrix = Lattice<Matrix<Complex, 3>>;
 
-#endif

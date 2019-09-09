@@ -1,6 +1,3 @@
-#ifndef XLATTICE_GRID_H
-#define XLATTICE_GRID_H
+#pragma once
 
 #include "types.h"
-
-#endif
