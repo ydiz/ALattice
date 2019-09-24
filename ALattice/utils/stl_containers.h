@@ -140,6 +140,7 @@ template<typename T, typename U>
 std::ostream& operator<<(std::ostream& out, std::pair<T, U> p)
 {
   out << "(" << p.first << ", " << p.second << ")";
+  return out;
 }
 
 template<typename T, std::size_t N>
